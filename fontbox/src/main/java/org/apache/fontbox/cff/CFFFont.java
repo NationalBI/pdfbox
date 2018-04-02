@@ -155,6 +155,12 @@ public abstract class CFFFont implements FontBoxFont
         return charStrings.length;
     }
 
+    @Override
+    public boolean isForHiddenText()
+    {
+        return charStrings.length <= 1;  // The first one is .nodef.
+    }
+
     /**
      * Sets the global subroutine index data.
      * 

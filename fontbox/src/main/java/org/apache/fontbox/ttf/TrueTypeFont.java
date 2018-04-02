@@ -720,6 +720,19 @@ public class TrueTypeFont implements FontBoxFont, Closeable
     }
 
     @Override
+    public boolean isForHiddenText()
+    {
+        try
+        {
+            return getNumberOfGlyphs() == 0;
+        }
+        catch (IOException exn)
+        {
+            return false;
+        }
+    }
+
+    @Override
     public BoundingBox getFontBBox() throws IOException
     {
         short xMin = getHeader().getXMin();

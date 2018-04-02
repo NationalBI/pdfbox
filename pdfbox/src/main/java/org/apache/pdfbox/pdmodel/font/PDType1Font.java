@@ -482,6 +482,12 @@ public class PDType1Font extends PDSimpleFont implements PDVectorFont
     }
 
     @Override
+    public boolean isForHiddenText()
+    {
+        return genericFont.isForHiddenText();
+    }
+
+    @Override
     public float getAverageFontWidth()
     {
         if (getStandard14AFM() != null)

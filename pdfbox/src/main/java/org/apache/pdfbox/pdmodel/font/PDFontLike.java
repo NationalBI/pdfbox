@@ -117,6 +117,16 @@ public interface PDFontLike
     boolean isDamaged();
 
     /**
+     * @return true if this font is for hidden text, i.e. it is known
+     * to have no non-empty glyphs.  This is used for text that has
+     * been placed in a document by OCR software as a hidden searchable
+     * layer, so it is not meant to be visible when the document is
+     * rendered.  If the value is not known (e.g. the font has not been
+     * loaded yet) then the return value is false.
+     */
+    boolean isForHiddenText();
+
+    /**
      * This will get the average font width for all characters.
      *
      * @return The width is in 1000 unit of text space, ie 333 or 777

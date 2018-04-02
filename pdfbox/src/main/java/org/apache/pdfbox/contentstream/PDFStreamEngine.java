@@ -673,6 +673,11 @@ public abstract class PDFStreamEngine
             font = PDFontFactory.createDefaultFont();
         }
 
+        if (font.isForHiddenText())
+        {
+            return;
+        }
+
         float fontSize = textState.getFontSize();
         float horizontalScaling = textState.getHorizontalScaling() / 100f;
         float charSpacing = textState.getCharacterSpacing();

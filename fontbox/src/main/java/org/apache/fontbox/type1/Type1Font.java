@@ -186,6 +186,12 @@ public final class Type1Font implements Type1CharStringReader, EncodedFont, Font
     }
 
     @Override
+    public boolean isForHiddenText()
+    {
+        return charstrings.size() <= 1;    // The first one is .nodef.
+    }
+
+    @Override
     public Type1CharString getType1CharString(String name) throws IOException
     {
         Type1CharString type1 = charStringCache.get(name);

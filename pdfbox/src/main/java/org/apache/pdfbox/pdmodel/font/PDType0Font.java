@@ -458,6 +458,12 @@ public class PDType0Font extends PDFont implements PDVectorFont
     }
 
     @Override
+    public boolean isForHiddenText()
+    {
+        return descendantFont.isForHiddenText();
+    }
+
+    @Override
     public String toUnicode(int code) throws IOException
     {
         // try to use a ToUnicode CMap

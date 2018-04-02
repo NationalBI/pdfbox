@@ -429,6 +429,12 @@ public class PDTrueTypeFont extends PDSimpleFont implements PDVectorFont
     }
 
     @Override
+    public boolean isForHiddenText()
+    {
+        return ttf.isForHiddenText();
+    }
+
+    @Override
     public GeneralPath getPath(int code) throws IOException
     {
         int gid = codeToGID(code);

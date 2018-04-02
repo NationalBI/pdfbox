@@ -311,6 +311,12 @@ public class PDType1CFont extends PDSimpleFont implements PDVectorFont
     }
 
     @Override
+    public boolean isForHiddenText()
+    {
+        return genericFont.isForHiddenText();
+    }
+
+    @Override
     public float getHeight(int code) throws IOException
     {
         String name = codeToName(code);

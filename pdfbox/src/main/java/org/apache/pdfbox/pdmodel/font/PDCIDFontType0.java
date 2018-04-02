@@ -438,6 +438,24 @@ public class PDCIDFontType0 extends PDCIDFont
     }
 
     @Override
+    public boolean isForHiddenText()
+    {
+        if (cid2gid != null && cid2gid.length > 0)
+        {
+            return false;
+        }
+        if (cidFont != null)
+        {
+            return cidFont.isForHiddenText();
+        }
+        if (t1Font != null)
+        {
+            return t1Font.isForHiddenText();
+        }
+        return false;
+    }
+
+    @Override
     public float getHeight(int code) throws IOException
     {
         int cid = codeToCID(code);

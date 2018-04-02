@@ -162,6 +162,13 @@ public class PDType3Font extends PDSimpleFont
     }
 
     @Override
+    public boolean isForHiddenText()
+    {
+        // Unimplemented, but we can return false per the interface contract.
+        return false;
+    }
+
+    @Override
     public float getHeight(int code) throws IOException
     {
         PDFontDescriptor desc = getFontDescriptor();

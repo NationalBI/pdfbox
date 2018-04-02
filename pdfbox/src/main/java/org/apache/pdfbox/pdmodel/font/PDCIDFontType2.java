@@ -377,6 +377,16 @@ public class PDCIDFontType2 extends PDCIDFont
         return isDamaged;
     }
 
+    @Override
+    public boolean isForHiddenText()
+    {
+        if (cid2gid != null && cid2gid.length > 0)
+        {
+            return false;
+        }
+        return ttf.isForHiddenText();
+    }
+
     /**
      * Returns the embedded or substituted TrueType font. May be an OpenType font if the font is
      * not embedded.
