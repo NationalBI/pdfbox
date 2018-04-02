@@ -117,9 +117,10 @@ public class TestPDFToImage
     {
         new File(outDir).mkdirs();
 
-        if (!doTestFile(new File(inDir, filename), inDir, outDir))
+        File inFile = new File(inDir, filename);
+        if (!doTestFile(inFile, inDir, outDir))
         {
-            fail("failure, see test log for details");
+            fail("failure with inFile=" + inFile + ", outDir=" + outDir + "; see test log for details");
         }
     }
 
